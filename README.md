@@ -4,7 +4,15 @@ description: 紀錄工程師的點點滴滴，目標是集中管理、消除重�
 
 # Manual
 
-分類可參閱 [developer-roadmap](https://github.com/kamranahmedse/developer-roadmap)
+零散的內容X
+
+* [訓練記錄](https://github.com/vincentliu99999/training)
+* [Hexo Blog](https://vincentliu99999.github.io/)
+* [wiki](https://vincentliu99999.github.io/wiki/)
+
+## 分類設定
+
+可參閱 [developer-roadmap](https://github.com/kamranahmedse/developer-roadmap)
 
 以下是接觸過的領域
 
