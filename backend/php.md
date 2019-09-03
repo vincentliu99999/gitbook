@@ -39,6 +39,20 @@ composer self-update
 # Use composer self-update --rollback to return to version 1.8.5
 ```
 
+### Package
+
+#### Debug
+
+Tracy
+
+```php
+use Tracy\Debugger; // debug only
+
+Debugger::enable(); // debug only
+
+dump($variable);
+```
+
 ## [PHP Standards Recommendations\(PSR](https://www.php-fig.org/psr/)\)
 
 [PHP\_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
