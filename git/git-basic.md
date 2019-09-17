@@ -1,6 +1,6 @@
-# Git 基礎
+# Git 新手上路
 
-工作環境
+## 工作環境
 
 1. Workspace: 開發中的工作目錄
 2. Staging Area: 暫存區
@@ -13,13 +13,13 @@
 
 ```bash
 # way1: 建立名為 project-name 的 Repository
-mkdir [project-name]
+mkdir project-name && cd project-name
 git init
 
 # way2: 建立名為 project-name 的 Repository
 git init [project-name]
 
-# 下載 Repository
+# 下載 Repository ex: git@github.com:vincentliu99999/wiki.git
 git clone [url]
 ```
 
@@ -37,10 +37,10 @@ mkdir [dir]
 cd [dir]
 touch .gitkeep
 
-# 清除檔案
+# 清除不在版控內的檔案
 git clean -f
 
-# 清除目錄
+# 清除不在版控內的檔案及目錄
 git clean -df
 
 # 暫存區移除檔案
