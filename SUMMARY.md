@@ -1,11 +1,6 @@
 # Table of contents
 
 * [Manual](README.md)
-* [Git](git/README.md)
-  * [Git 設定](git/git-config.md)
-  * [Git 新手上路](git/git-basic.md)
-  * [Git 分支](git/git-fen-zhi.md)
-  * [Git 遠端操作](git/git-yuan-duan-cao-zuo.md)
 * [Terminal](terminal.md)
 * [Back-end](backend/README.md)
   * [Node.js](backend/node.js/README.md)
@@ -18,4 +13,7 @@
     * [HTTP Client](backend/php/http-client.md)
     * [URL function](backend/php/url-function.md)
     * [VSCode](backend/php/vscode.md)
+* [Git](git/README.md)
+  * [Git 設定](git/git-config.md)
+  * [Git 新手上路](git/git-basic.md)
 

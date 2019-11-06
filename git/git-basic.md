@@ -45,14 +45,6 @@ git clean -df
 
 # 暫存區移除檔案
 git rm --cached [file1] [file2]
-
-# 還原檔案
-git checkout [file1] [file2]
-git checkout .
-
-# 清除檔案/目錄
-git clean -f
-git clean -df
 ```
 
 ## 提交變更記錄
@@ -66,10 +58,6 @@ git commit --amend
 
 # 合併最後一次提交的訊息
 git commit --amend -m [message]
-
-# 取消 commit
-git reset HEAD^ # 檔案保留
-git reset HEAD^ --hard # 檔案不保留
 ```
 
 ## 查看紀錄
