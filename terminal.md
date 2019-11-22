@@ -1,5 +1,7 @@
 # Terminal
 
+[鳥哥的 Linux 私房菜](http://linux.vbird.org/)
+
 ## 基礎指令
 
 * 目錄操作： `ls`, `cd`, `pwd`, `mkdir`, `rmdir`
