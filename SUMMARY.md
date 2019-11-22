@@ -1,7 +1,8 @@
 # Table of contents
 
 * [Manual](README.md)
-* [Terminal](terminal.md)
+* [Linux](terminal/README.md)
+  * [CLI](terminal/cli.md)
 * [Back-end](backend/README.md)
   * [Node.js](backend/node.js/README.md)
     * [PM2 - Process Manager](backend/node.js/pm2-process-manager.md)
