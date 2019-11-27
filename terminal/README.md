@@ -22,3 +22,32 @@
 * \[Ctrl\]+\[l\]\`: 清空畫面
 * \[shift\]+\[PageUp\], \[shift\]+\[PageDown\]： 上下移動螢幕畫面
 
+## 系統資訊
+
+```text
+uname
+uname -r # kernel
+uname -v # kernel release
+uname -m # arch
+uname -n # network hostname
+uname -a # all info
+```
+
+## 語系設定
+
+[https://stackoverflow.com/questions/29609371/how-do-not-pass-locale-through-ssh](https://stackoverflow.com/questions/29609371/how-do-not-pass-locale-through-ssh)
+
+```text
+locale # host 語系設定
+locale -a # 列出支援的語系
+
+# howto not forward local setting to remote
+vim /etc/ssh/ssh_config
+# 註解以下設定
+# SendEnv LANG LC_*
+
+# 語系測試
+LANG="en_IN.utf8" && export LANG
+LANG="zh_TW.big5" && export LANG
+```
+
