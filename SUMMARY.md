@@ -2,8 +2,9 @@
 
 * [Manual](README.md)
 * [Linux](terminal/README.md)
-  * [Terminal](terminal/terminal.md)
   * [CLI](terminal/cli.md)
+  * [Terminal](terminal/terminal.md)
+  * [Shell](terminal/shell.md)
 * [Back-end](backend/README.md)
   * [Node.js](backend/node.js/README.md)
     * [PM2 - Process Manager](backend/node.js/pm2-process-manager.md)
