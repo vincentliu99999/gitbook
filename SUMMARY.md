@@ -2,6 +2,7 @@
 
 * [Manual](README.md)
 * [Linux](terminal/README.md)
+  * [Terminal](terminal/terminal.md)
   * [CLI](terminal/cli.md)
 * [Back-end](backend/README.md)
   * [Node.js](backend/node.js/README.md)
