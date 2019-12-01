@@ -1,5 +1,14 @@
 # CLI
 
+## [exa](https://the.exa.website/)
+
+```bash
+exa
+exa -l
+exa -alh
+exa --tree --level=2
+```
+
 ## Getting Super Powers
 
 Becoming a super hero is a fairly straight forward process:

@@ -3,7 +3,8 @@
 * [Z Shell\(Zsh](https://www.zsh.org/)[\)](https://github.com/ohmyzsh/ohmyzsh)
 * [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh) 管理 zsh 設定
   * 需求: zsh, curl, wget, git
-  * zsh-completions
+  * zsh-completions 打字按右鍵，可自動完成
+  * zsh-syntax-highlighting
 
 ## Oh My Zsh
 
@@ -11,8 +12,12 @@
 * [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 
 ```text
-# 設定預設 shell
+# 設定預設 shell, 之後登出並重新登入
 chsh -s /usr/local/bin/zsh
+chsh -s $(which zsh)
+
+echo $0
+which zsh
 ```
 
 ### [Powerlevel9k](https://github.com/Powerlevel9k/powerlevel9k)
@@ -25,6 +30,8 @@ brew install powerlevel9k
 # mac 安裝字型 https://github.com/powerline/fonts
 # nerd-fonts https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts
 # POWERLEVEL9K_MODE='nerdfont-complete'
+brew cask install font-sourcecodepro-nerd-font
+brew cask install font-firacode-nerd-font
 
 # 修改後
 vi ~/.zshrc
