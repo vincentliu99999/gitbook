@@ -16,8 +16,6 @@
     * [HTTP Client](backend/php/http-client.md)
     * [URL function](backend/php/url-function.md)
     * [VSCode](backend/php/vscode.md)
-* [IDE](ide/README.md)
-  * [VSCode](ide/vscode.md)
 * [Git](git/README.md)
   * [Git 設定](git/git-config.md)
   * [Git 新手上路](git/git-basic.md)
@@ -25,6 +23,7 @@
 ## AWS
 
 * [AWS Info](aws/aws-info.md)
+* [AWS CLI](aws/aws-cli.md)
 * [EC2](aws/ec2.md)
 * [CloudWatch](aws/cloudwatch.md)
 
