@@ -22,3 +22,9 @@
   * [Git 設定](git/git-config.md)
   * [Git 新手上路](git/git-basic.md)
 
+## AWS
+
+* [AWS Info](aws/aws-info.md)
+* [EC2](aws/ec2.md)
+* [CloudWatch](aws/cloudwatch.md)
+
