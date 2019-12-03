@@ -26,4 +26,6 @@
   * [AWS CLI](aws/aws-info/aws-cli.md)
 * [EC2](aws/ec2.md)
 * [CloudWatch](aws/cloudwatch.md)
+* [DynamoDB](aws/dynamodb.md)
+* [CloudFormation](aws/cloudformation.md)
 
