@@ -45,6 +45,10 @@
     * 增加資源屬性 key pair
     * 變更 stack 資源
 
+## [Best Practices](https://docs.aws.amazon.com/en_us/AWSCloudFormation/latest/UserGuide/best-practices.html) <a id="best-practices"></a>
+
+
+
 ## [CloudFormation API](https://docs.aws.amazon.com/zh_tw/AWSCloudFormation/latest/APIReference/Welcome.html)
 
 運用 template 管理 AWS infra

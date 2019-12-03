@@ -55,3 +55,23 @@ LANG="en_IN.utf8" && export LANG
 LANG="zh_TW.big5" && export LANG
 ```
 
+## DNS
+
+* `/etc/hosts` hostname 對應 ip
+* `/etc/resolv.conf` DNS's IP in client
+* `/etc/nsswitch.conf` 要用哪個設定檔
+
+```text
+host google.com.tw # hostname + IP
+host -a google.com.tw # TTL
+
+nslookup google.com.tw # DNS, IP
+nslookup
+
+dig google.com.tw
+dig google.com.tw +short
+
+whois google.com.tw
+
+```
+
