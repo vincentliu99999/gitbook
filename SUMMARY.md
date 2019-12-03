@@ -22,8 +22,8 @@
 
 ## AWS
 
-* [AWS Info](aws/aws-info.md)
-* [AWS CLI](aws/aws-cli.md)
+* [AWS Info](aws/aws-info/README.md)
+  * [AWS CLI](aws/aws-info/aws-cli.md)
 * [EC2](aws/ec2.md)
 * [CloudWatch](aws/cloudwatch.md)
 
