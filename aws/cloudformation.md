@@ -144,6 +144,8 @@ https://eu-central-1.console.aws.amazon.com/cloudformation/home?region=eu-centra
 * DELETE\_IN\_PROGRESS -&gt; DELETE\_COMPLETE
 * DELETE\_FAILED [原因](https://docs.aws.amazon.com/zh_tw/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-delete-stack-fails) 
 
+### [Using the AWS CLI](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-cli.html)
+
 ### [更新 stack](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html)
 
 1. 直接更新\(較快速\)
@@ -169,9 +171,19 @@ https://eu-central-1.console.aws.amazon.com/cloudformation/home?region=eu-centra
 4. 驗證 template
 5. 儲存
 
-## [Using the AWS CLI](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-cli.html)
-
 ## [Bringing Existing Resources Into CloudFormation Management](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html)
+
+用 change set 匯入已存在資源至 stack，或建立新的 stack
+
+* 用 template 描述，匯入的資源需指定 [DeletionPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html)
+* 資源識別屬性、值
+
+資源匯入驗證
+
+* 資源必須存在
+* 屬性及設定選項
+* [必要的屬性](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html)
+* 不存在其他 stack
 
 ## [故障診斷](https://docs.aws.amazon.com/zh_tw/AWSCloudFormation/latest/UserGuide/troubleshooting.html)
 
