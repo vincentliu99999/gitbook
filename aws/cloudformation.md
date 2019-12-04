@@ -144,7 +144,7 @@ https://eu-central-1.console.aws.amazon.com/cloudformation/home?region=eu-centra
 * DELETE\_IN\_PROGRESS -&gt; DELETE\_COMPLETE
 * DELETE\_FAILED [原因](https://docs.aws.amazon.com/zh_tw/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-delete-stack-fails) 
 
-### 更新 stack
+### [更新 stack](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html)
 
 1. 直接更新\(較快速\)
 2. 建立 change set，可預覽變更、選擇是否要套用\(考慮選項時\)
@@ -157,11 +157,17 @@ https://eu-central-1.console.aws.amazon.com/cloudformation/home?region=eu-centra
 2. 中斷 ex: AWS::EC2::Instance
 3. 取代 ex: AWS::RDS::DBInstance
 
-#### 更新 template
+#### 更新 stack template
 
 更新資源及屬性，用以存在的 template 來更新
 
 變更參數或設定時，不需更新 template
+
+1. 選擇 stack
+2. view in designer
+3. 修改 template
+4. 驗證 template
+5. 儲存
 
 ## [Using the AWS CLI](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-cli.html)
 
