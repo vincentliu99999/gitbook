@@ -59,8 +59,6 @@ pipeline 分為 3 個階段，每個階段至少要有一個 action，依照你�
 2. 建立 test stack，等待你的核可
 3. 建立 change set，等待你的核可
 
-Note: S3 所有版本須清空後才可刪除 `The bucket you tried to delete is not empty. You must delete all versions in the bucket. (Service: Amazon S3; Status Code: 409; Error Code: BucketNotEmpty; Request ID: 7AFF6F42CAA14174; S3 Extended Request ID: 7+geM2Xm+KaKhIty0J0oEbx6FexpXhhAYAzvQvxh5IaxFynsGTb0wjR12SImtJFkswQ86p6vhaY=)`
-
 #### step1 編輯  artifact 並上傳到 S3
 
 CodePipeline artifact 須打包成 zip 後上傳到 S3
@@ -142,6 +140,14 @@ https://eu-central-1.console.aws.amazon.com/cloudformation/home?region=eu-centra
 ```
 
 ### 刪除 Stack
+
+* DELETE\_IN\_PROGRESS -&gt; DELETE\_COMPLETE
+* DELETE\_FAILED [原因](https://docs.aws.amazon.com/zh_tw/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-delete-stack-fails) 
+  * S3 所有版本須清空後才可刪除
+
+{% hint style="info" %}
+`The bucket you tried to delete is not empty. You must delete all versions in the bucket. (Service: Amazon S3; Status Code: 409; Error Code: BucketNotEmpty; Request ID: 7AFF6F42CAA14174; S3 Extended Request ID: 7+geM2Xm+KaKhIty0J0oEbx6FexpXhhAYAzvQvxh5IaxFynsGTb0wjR12SImtJFkswQ86p6vhaY=)`
+{% endhint %}
 
 ## [Using the AWS CLI](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-cli.html)
 
