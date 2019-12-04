@@ -51,7 +51,7 @@
 
 自動 build, test, [CodePipeline](https://docs.aws.amazon.com/codepipeline/latest/userguide/) 可自動對 template 處理這些事項
 
-### Walkthrough: Building a Pipeline for Test and Production Stacks
+### Walkthrough: Building a Pipeline for Test and Production Stacks \(pending\)
 
 pipeline 分為 3 個階段，每個階段至少要有一個 action，依照你的 artifacts 進行
 
@@ -79,7 +79,71 @@ CodePipeline artifact 須打包成 zip 後上傳到 S3
 
 ## [Working with Stacks](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html)
 
-stack: 一群可管理的 AWS resources，可進行 create, update, delete，皆由 template 定義，所有單位須運作正常，否則會進行 roll back
+stack: 一群可管理的 AWS resources，並可視為一個單位，stack 可進行 create, update, delete，皆由 template 定義，CloudFormation 確保所有單位皆須運作正常，否則會進行 roll back
+
+### [Using the Console](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console.html)
+
+[console](https://console.aws.amazon.com/cloudformation/)
+
+#### [Creating a Stack](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html)
+
+準備 template
+
+* template 已準備好
+  * 1. Amazon S3 URL，如果有啟用版本，可以指定
+    2. 手動上傳，上限 460,800 bytes，上傳後會有 S3 URL
+* [template 範本](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-sample-templates.html)，由 CloudFormation 提供，現有資源可以用 `CloudFormer` 建立 stack
+* [Designer](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/working-with-templates-cfn-designer.html): 可用拖拉方式編輯
+
+準備名稱及[參數](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html)客製化建立 template
+
+* 可在 template 準備參數值選項
+* 參數可有預設值
+* AWS 特定參數，可用 drop down list 選擇，例如 `AWS::EC2::VPC::Id` 就可以選擇或搜尋 VPC
+
+{% hint style="info" %}
+AWS::EC2::Image::Id 無 drop down list，CloudFormation 僅會驗證 image Id 有效
+
+參數名稱會依字母順序排列，可用 `AWS::CloudFormation::Interface` [指定排列順序](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-interface.html)
+{% endhint %}
+
+[設定 stack 選項](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html)
+
+* tag
+* [權限](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-servicerole.html) by IAM
+* Stack policy: [預防無預警 update](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html)
+* Rollback 設定: by Cloudwatch alarms [monitor](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html)
+* 通知選項: by SNS
+* 建立選項
+  * Rollback on failure: 預設開啟，debug 時可關閉
+  * Timeout: 預設無, 個別資源可能有設定
+  * Termination protection: 預設關閉，[避免無預警刪除](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html)
+
+### [檢視 stack 資料及資源](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-view-stack-data-resources.html)
+
+* **Stack info**
+* \*\*\*\*[**Stack Status Codes**](https://docs.aws.amazon.com/zh_tw/AWSCloudFormation/latest/UserGuide/cfn-console-view-stack-data-resources.html#cfn-console-view-stack-data-resources-status-codes)\*\*\*\*
+
+### \*\*\*\*[**URL 快速建立**](https://docs.aws.amazon.com/zh_tw/AWSCloudFormation/latest/UserGuide/cfn-console-create-stacks-quick-create-links.html)\*\*\*\*
+
+* templateURL
+* stackName
+* 參數
+  * param\__`parameterName`_
+  * NoEcho 會忽略
+
+```text
+https://eu-central-1.console.aws.amazon.com/cloudformation/home?region=eu-central-1#/stacks/create/review
+   ?templateURL=https://s3-eu-central-1.amazonaws.com/cloudformation-templates-eu-central-1/WordPress_Single_Instance.template
+   &stackName=MyWPBlog
+   &param_DBName=mywpblog
+   &param_InstanceType=t2.medium
+   &param_KeyName=MyKeyPair
+```
+
+### 刪除 Stack
+
+## [Using the AWS CLI](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-cli.html)
 
 ## [Bringing Existing Resources Into CloudFormation Management](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html)
 
