@@ -105,7 +105,7 @@ AWS::EC2::Image::Id 無 drop down list，CloudFormation 僅會驗證 image Id �
 參數名稱會依字母順序排列，可用 `AWS::CloudFormation::Interface` [指定排列順序](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-interface.html)
 {% endhint %}
 
-[設定 stack 選項](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html)
+#### [設定 stack 選項](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html)
 
 * tag
 * [權限](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-servicerole.html) by IAM
@@ -117,12 +117,12 @@ AWS::EC2::Image::Id 無 drop down list，CloudFormation 僅會驗證 image Id �
   * Timeout: 預設無, 個別資源可能有設定
   * Termination protection: 預設關閉，[避免無預警刪除](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html)
 
-### [檢視 stack 資料及資源](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-view-stack-data-resources.html)
+#### [檢視 stack 資料及資源](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-view-stack-data-resources.html)
 
 * **Stack info**
 * \*\*\*\*[**Stack Status Codes**](https://docs.aws.amazon.com/zh_tw/AWSCloudFormation/latest/UserGuide/cfn-console-view-stack-data-resources.html#cfn-console-view-stack-data-resources-status-codes)\*\*\*\*
 
-### \*\*\*\*[**URL 快速建立**](https://docs.aws.amazon.com/zh_tw/AWSCloudFormation/latest/UserGuide/cfn-console-create-stacks-quick-create-links.html)\*\*\*\*
+#### \*\*\*\*[**URL 快速建立**](https://docs.aws.amazon.com/zh_tw/AWSCloudFormation/latest/UserGuide/cfn-console-create-stacks-quick-create-links.html)\*\*\*\*
 
 * templateURL
 * stackName
@@ -139,7 +139,7 @@ https://eu-central-1.console.aws.amazon.com/cloudformation/home?region=eu-centra
    &param_KeyName=MyKeyPair
 ```
 
-### 刪除 Stack
+#### 刪除 Stack
 
 * DELETE\_IN\_PROGRESS -&gt; DELETE\_COMPLETE
 * DELETE\_FAILED [原因](https://docs.aws.amazon.com/zh_tw/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-delete-stack-fails) 
@@ -148,6 +148,8 @@ https://eu-central-1.console.aws.amazon.com/cloudformation/home?region=eu-centra
 {% hint style="info" %}
 `The bucket you tried to delete is not empty. You must delete all versions in the bucket. (Service: Amazon S3; Status Code: 409; Error Code: BucketNotEmpty; Request ID: 7AFF6F42CAA14174; S3 Extended Request ID: 7+geM2Xm+KaKhIty0J0oEbx6FexpXhhAYAzvQvxh5IaxFynsGTb0wjR12SImtJFkswQ86p6vhaY=)`
 {% endhint %}
+
+### 更新 stack
 
 ## [Using the AWS CLI](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-cli.html)
 
