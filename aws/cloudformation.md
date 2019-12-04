@@ -47,6 +47,8 @@
 
 ## [Best Practices](https://docs.aws.amazon.com/en_us/AWSCloudFormation/latest/UserGuide/best-practices.html) <a id="best-practices"></a>
 
+### [Do Not Embed Credentials in Your Templates](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/best-practices.html#creds)
+
 ## [Continuous Delivery with CodePipeline](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline.html)
 
 自動 build, test, [CodePipeline](https://docs.aws.amazon.com/codepipeline/latest/userguide/) 可自動對 template 處理這些事項
@@ -209,6 +211,13 @@ YAML 可有註解，但之後用 Designer 編輯後註解會消失
 2. [Description \(optional\)](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-description-structure.html) 描述 template
 3. [Metadata \(optional\)](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html)
 4. [Parameters \(optional\)](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html) 可參照 `Resources` 以及 `Outputs`
+   1. 在 template 中定義
+   2. 可參照變數
+   3. 最多 60 個，[Type](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#parameters-section-structure-properties-type) 必須是支援的、執行過程需指定數值、僅能參照同個檔案的變數
+   4. \*\*\*\*[Properties](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#parameters-section-structure-properties)
+   5. [AWS 特定參數類型](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-specific-parameter-types)
+   6. [SSM Parameter Types](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#parameters-section-ssm-examples) 直接使用  [Systems Manager Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-paramstore.html) 作為變數來源，ref: [https://docs.aws.amazon.com/zh\_tw/systems-manager/latest/userguide/sysman-paramstore-securestring.html](https://docs.aws.amazon.com/zh_tw/systems-manager/latest/userguide/sysman-paramstore-securestring.html)
+   7. console 介面預設會依照字母順序排序，可在 `AWS::CloudFormation::Interface` 變更
 5. [Mappings \(optional\)](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure.html) 條件式參數，可利用 [Fn::FindInMap](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-findinmap.html)
 6. [Conditions \(optional\)](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/conditions-section-structure.html) 可 include 任意的 JSON 或 YAML 物件，詳細描述 template\(pending\)
    1. [AWS::CloudFormation::Authentication](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-authentication.html)
