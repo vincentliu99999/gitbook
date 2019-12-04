@@ -171,9 +171,9 @@ https://eu-central-1.console.aws.amazon.com/cloudformation/home?region=eu-centra
 4. 驗證 template
 5. 儲存
 
-## [Bringing Existing Resources Into CloudFormation Management](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html)
+## [Bringing Existing Resources Into CloudFormation Management](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html)\(pending\)
 
-用 change set 匯入已存在資源至 stack，或建立新的 stack
+用 change set 匯入已存在資源至 stack，或建立新的 stack [Resource Import Status Codes](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html#resource-import-status-codes)
 
 * 用 template 描述，匯入的資源需指定 [DeletionPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html)
 * 資源識別屬性、值
@@ -184,6 +184,39 @@ https://eu-central-1.console.aws.amazon.com/cloudformation/home?region=eu-centra
 * 屬性及設定選項
 * [必要的屬性](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html)
 * 不存在其他 stack
+
+匯入作業
+
+* 針對匯入資源 run [drift detection](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/detect-drift-stack.html)，確保設定
+* 匯入過程不允許資源的建立、刪除、修改設定
+
+## Working with AWS CloudFormation Templates <a id="template-guide"></a>
+
+JSON, YAML 格式的文字檔，或用 designer，可參閱 [Template Snippets](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/CHAP_TemplateQuickRef.html)
+
+### Template Formats
+
+YAML 可有註解，但之後用 Designer 編輯後註解會消失
+
+* [ECMA-404 JSON](http://www.json.org/)
+* [YAML Version 1.1](http://www.yaml.org/)，但有部分功能不支援
+
+### 解析 Template
+
+僅有 `Resources` 區段是必要的，因有數值會做參照，建議區段順序下如下
+
+1. [Format Version \(optional\)](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/format-version-structure.html) 目前僅有 `2010-09-09` 是合法的，沒設定會用最新版
+2. [Description \(optional\)](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-description-structure.html) 描述 template
+3. [Metadata \(optional\)](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html)
+4. [Parameters \(optional\)](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html) 可參照 `Resources` 以及 `Outputs`
+5. [Mappings \(optional\)](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure.html) 條件式參數，可利用 [Fn::FindInMap](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-findinmap.html)
+6. [Conditions \(optional\)](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/conditions-section-structure.html) 可 include 任意的 JSON 或 YAML 物件，詳細描述 template\(pending\)
+   1. [AWS::CloudFormation::Authentication](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-authentication.html)
+   2. [AWS::CloudFormation::Init](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-init.html)
+   3. [AWS::CloudFormation::Interface](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-interface.html)
+7. [Transform \(optional\)](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-section-structure.html) for [serverless applications](https://docs.aws.amazon.com/lambda/latest/dg/deploying-lambda-apps.html)
+8. [Resources \(required\)](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html)
+9. [Outputs \(optional\)](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html) 查看 stack 的屬性要顯示什麼
 
 ## [故障診斷](https://docs.aws.amazon.com/zh_tw/AWSCloudFormation/latest/UserGuide/troubleshooting.html)
 
