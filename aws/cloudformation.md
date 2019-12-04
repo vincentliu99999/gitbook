@@ -143,17 +143,40 @@ https://eu-central-1.console.aws.amazon.com/cloudformation/home?region=eu-centra
 
 * DELETE\_IN\_PROGRESS -&gt; DELETE\_COMPLETE
 * DELETE\_FAILED [原因](https://docs.aws.amazon.com/zh_tw/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-delete-stack-fails) 
+
+### 更新 stack
+
+1. 直接更新\(較快速\)
+2. 建立 change set，可預覽變更、選擇是否要套用\(考慮選項時\)
+
+#### 更新行為
+
+不同 resource 有不同行為，參閱  [AWS Resource Types Reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html)
+
+1. 不中斷 ex: AWS::CloudTrail::Trail
+2. 中斷 ex: AWS::EC2::Instance
+3. 取代 ex: AWS::RDS::DBInstance
+
+#### 更新 template
+
+更新資源及屬性，用以存在的 template 來更新
+
+變更參數或設定時，不需更新 template
+
+## [Using the AWS CLI](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-cli.html)
+
+## [Bringing Existing Resources Into CloudFormation Management](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html)
+
+## [故障診斷](https://docs.aws.amazon.com/zh_tw/AWSCloudFormation/latest/UserGuide/troubleshooting.html)
+
+### 刪除堆疊失敗
+
+* 須清空的資源
   * S3 所有版本須清空後才可刪除
 
 {% hint style="info" %}
 `The bucket you tried to delete is not empty. You must delete all versions in the bucket. (Service: Amazon S3; Status Code: 409; Error Code: BucketNotEmpty; Request ID: 7AFF6F42CAA14174; S3 Extended Request ID: 7+geM2Xm+KaKhIty0J0oEbx6FexpXhhAYAzvQvxh5IaxFynsGTb0wjR12SImtJFkswQ86p6vhaY=)`
 {% endhint %}
-
-### 更新 stack
-
-## [Using the AWS CLI](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-cli.html)
-
-## [Bringing Existing Resources Into CloudFormation Management](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html)
 
 ## [CloudFormation API](https://docs.aws.amazon.com/zh_tw/AWSCloudFormation/latest/APIReference/Welcome.html)
 
