@@ -47,7 +47,17 @@
 
 ## [Best Practices](https://docs.aws.amazon.com/en_us/AWSCloudFormation/latest/UserGuide/best-practices.html) <a id="best-practices"></a>
 
+## [Continuous Delivery with CodePipeline](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline.html)
 
+自動 build, test, [CodePipeline](https://docs.aws.amazon.com/codepipeline/latest/userguide/) 可自動對 template 處理這些事項
+
+### Walkthrough: Building a Pipeline for Test and Production Stacks
+
+pipeline 分為 3 個階段，每個階段至少要有一個 action，依照你的 artifacts 進行
+
+1. pipeline 取得 artifacts\(template + 設定檔\)
+2. 建立 test stack，等待你的核可
+3. 建立 change set，等待你的核可
 
 ## [CloudFormation API](https://docs.aws.amazon.com/zh_tw/AWSCloudFormation/latest/APIReference/Welcome.html)
 
