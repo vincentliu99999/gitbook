@@ -55,11 +55,11 @@
 
 pipeline 分為 3 個階段，每個階段至少要有一個 action，依照你的 artifacts 進行
 
-Note: S3 所有版本須清空後才可刪除 `The bucket you tried to delete is not empty. You must delete all versions in the bucket. (Service: Amazon S3; Status Code: 409; Error Code: BucketNotEmpty; Request ID: 7AFF6F42CAA14174; S3 Extended Request ID: 7+geM2Xm+KaKhIty0J0oEbx6FexpXhhAYAzvQvxh5IaxFynsGTb0wjR12SImtJFkswQ86p6vhaY=)`
-
 1. pipeline 取得 artifacts\(template + 設定檔\)
 2. 建立 test stack，等待你的核可
 3. 建立 change set，等待你的核可
+
+Note: S3 所有版本須清空後才可刪除 `The bucket you tried to delete is not empty. You must delete all versions in the bucket. (Service: Amazon S3; Status Code: 409; Error Code: BucketNotEmpty; Request ID: 7AFF6F42CAA14174; S3 Extended Request ID: 7+geM2Xm+KaKhIty0J0oEbx6FexpXhhAYAzvQvxh5IaxFynsGTb0wjR12SImtJFkswQ86p6vhaY=)`
 
 #### step1 編輯  artifact 並上傳到 S3
 
@@ -77,9 +77,11 @@ CodePipeline artifact 須打包成 zip 後上傳到 S3
 3. 上傳範例 basic-pipeline.yml
 4. stack name: `sample-WordPress-pipeline`
 
-## Working with Stacks
+## [Working with Stacks](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html)
 
-stack: 一群可管理的 AWS resources，可進行 CRUD
+stack: 一群可管理的 AWS resources，可進行 create, update, delete，皆由 template 定義，所有單位須運作正常，否則會進行 roll back
+
+## [Bringing Existing Resources Into CloudFormation Management](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html)
 
 ## [CloudFormation API](https://docs.aws.amazon.com/zh_tw/AWSCloudFormation/latest/APIReference/Welcome.html)
 
