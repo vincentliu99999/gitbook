@@ -14,7 +14,13 @@
 
 * [Database normalization](https://en.wikipedia.org/wiki/Database_normalization)
   * 結構化方式設計 table，減少重複的資料
-* [ACID](https://en.wikipedia.org/wiki/ACID)
+
+### [ACID](https://en.wikipedia.org/wiki/ACID)
+
+* **A = Atomicity**，交易成功 0% 或 100%
+* **C = Consistency**，狀態皆正常
+* **I = Isolation**
+* **D = Durability**
 
 ## NoSQL
 
