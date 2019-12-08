@@ -1,8 +1,6 @@
 # Table of contents
 
 * [Manual](README.md)
-* [Database](database-1/README.md)
-  * [SQL](database-1/sql.md)
 * [Twilio](twilio.md)
 * [Linux](terminal/README.md)
   * [CLI](terminal/cli.md)
@@ -19,6 +17,8 @@
     * [HTTP Client](backend/php/http-client.md)
     * [URL function](backend/php/url-function.md)
     * [VSCode](backend/php/vscode.md)
+* [Database](database-1/README.md)
+  * [SQL](database-1/sql.md)
 * [Git](git/README.md)
   * [Git 設定](git/git-config.md)
   * [Git 新手上路](git/git-basic.md)
