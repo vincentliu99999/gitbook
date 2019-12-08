@@ -1,6 +1,8 @@
 # Table of contents
 
 * [Manual](README.md)
+* [Database](database-1/README.md)
+  * [SQL](database-1/sql.md)
 * [Twilio](twilio.md)
 * [Linux](terminal/README.md)
   * [CLI](terminal/cli.md)
@@ -29,8 +31,4 @@
 * [CloudWatch](aws/cloudwatch.md)
 * [DynamoDB](aws/dynamodb.md)
 * [CloudFormation](aws/cloudformation.md)
-
-## Database
-
-* [SQL](database/sql.md)
 
