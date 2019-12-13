@@ -78,3 +78,23 @@ git blame [file]
 git show [object]
 ```
 
+## 遠端
+
+[How to fetch all Git branches](https://stackoverflow.com/questions/10312521/how-to-fetch-all-git-branches)
+
+```bash
+git branch -r
+
+git fetch
+git fetch --all # fetch all branches
+
+# fetch and merge
+git fetch
+git merge origin/master
+
+# git pull = git fetch + git merge
+git pull
+git fetch && git merge origin/<branch>
+git pull --all # pull all branches
+```
+
