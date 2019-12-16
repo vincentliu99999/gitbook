@@ -33,5 +33,6 @@
 * [EC2](aws/ec2.md)
 * [CloudWatch](aws/cloudwatch.md)
 * [DynamoDB](aws/dynamodb.md)
-* [CloudFormation](aws/cloudformation.md)
+* [CloudFormation](aws/cloudformation-1/README.md)
+  * [CloudFormation Doc](aws/cloudformation-1/cloudformation.md)
 

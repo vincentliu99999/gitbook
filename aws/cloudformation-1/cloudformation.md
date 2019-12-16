@@ -1,4 +1,4 @@
-# CloudFormation
+# CloudFormation Doc
 
 ## [What is AWS CloudFormation?](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-whatis-concepts.html)
 
