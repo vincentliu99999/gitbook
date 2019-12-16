@@ -5,7 +5,7 @@
 ### **AWS CloudFormation Concepts**
 
 * 使用 template 描述運用的 AWS 資源及屬性
-* 簡化 Infrastructure 管理，免個別設定，省時省力省複雜度
+* 簡化 Infraructure 管理，免個別設定，省時省力省複雜度
 * 快速複製 Infrastructure 到不同 AZ
 * 簡易控制及變更，修改 template 即可
 
@@ -24,7 +24,6 @@
 
 * [Controlling Access with IAM](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html)
   * [Manage Credentials for Applications Running on Amazon EC2 Instances](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-template-manage-creds)
-* [AWS CloudFormation Limits](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html)
 
 ### Getting Started with AWS CloudFormation
 
@@ -100,12 +99,6 @@ stack: 一群可管理的 AWS resources，並可視為一個單位，stack 可�
 * 可在 template 準備參數值選項
 * 參數可有預設值
 * AWS 特定參數，可用 drop down list 選擇，例如 `AWS::EC2::VPC::Id` 就可以選擇或搜尋 VPC
-
-{% hint style="info" %}
-AWS::EC2::Image::Id 無 drop down list，CloudFormation 僅會驗證 image Id 有效
-
-參數名稱會依字母順序排列，可用 `AWS::CloudFormation::Interface` [指定排列順序](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-interface.html)
-{% endhint %}
 
 #### [設定 stack 選項](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html)
 
