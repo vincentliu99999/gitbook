@@ -4,15 +4,13 @@ description: 分配 target 流量
 
 # Elastic Load Balancing
 
-[比較 LB](https://aws.amazon.com/tw/elasticloadbalancing/features/#compare)
-
-listener: 透過 port, protocol 檢查連線 request 的流程
-
-類別
-
-* Application Load Balancers, by `target groups`, 預設 multi AZ\(建議選項\)
-* Network Load Balancers, by `target groups`
-* Classic Load Balancers, by `instances`
+* [比較 LB](https://aws.amazon.com/tw/elasticloadbalancing/features/#compare)
+* [Demo](https://exampleloadbalancer.com/)
+* listener: 透過 port, protocol 檢查連線 request 的流程
+* 類別
+  * Application Load Balancers, by `target groups`, 預設 multi AZ\(建議選項\)
+  * Network Load Balancers, by `target groups`
+  * Classic Load Balancers, by `instances`
 
 ### Request Routing
 
@@ -32,6 +30,18 @@ ALB
 ALB
 
 * 使用 connection multiplexing，client 的 request connection 都會 routed 到固定一組 target。如果不需要，可以在 HTTP response header 設定 `Connection: close` 來取消 HTTP `keep-alives`
+* front-end connections: HTTP/0.9, HTTP/1.0, HTTP/1.1, and HTTP/2.
+* idle timeout 預設 60 秒，連線 idle 時間超過時，會被阻斷並收到 error response
+
+#### HTTP Headers <a id="http-headers"></a>
+
+* **X-Forwarded-For**, **X-Forwarded-Proto**, and **X-Forwarded-Port**
+* \*\*\*\*[限制](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#http-header-limits)
+
+### Load Balancer Scheme <a id="load-balancer-scheme"></a>
+
+1. internal public 有 IP addresses
+2. internet-facing 僅有 private IP addresses，可存取 VPC 的 client 才能使用
 
 ## [Application Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html) <a id="introduction"></a>
 
