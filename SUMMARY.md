@@ -31,6 +31,7 @@
 * [AWS Info](aws/aws-info/README.md)
   * [AWS CLI](aws/aws-info/aws-cli.md)
 * [EC2](aws/ec2.md)
+* [Elastic Load Balancing](aws/elastic-load-balancing.md)
 * [CloudWatch](aws/cloudwatch.md)
 * [DynamoDB](aws/dynamodb.md)
 * [CloudFormation](aws/cloudformation-1/README.md)

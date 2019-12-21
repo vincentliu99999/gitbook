@@ -1,3 +1,7 @@
+---
+description: 模組化配置 AWS Resources，用 template 描述
+---
+
 # CloudFormation
 
 * Stack: 一群  AWS Resources
