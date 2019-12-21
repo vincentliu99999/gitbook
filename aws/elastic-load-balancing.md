@@ -4,8 +4,7 @@ description: 分配 target 流量
 
 # Elastic Load Balancing
 
-* [比較 LB](https://aws.amazon.com/tw/elasticloadbalancing/features/#compare)
-* [Demo](https://exampleloadbalancer.com/)
+* [比較 LB](https://aws.amazon.com/tw/elasticloadbalancing/features/#compare) \| [Pricing](https://aws.amazon.com/tw/elasticloadbalancing/pricing/)\(hr or LCU\) \| [Demo](https://exampleloadbalancer.com/)
 * listener: 透過 port, protocol 檢查連線 request 的流程
 * 類別
   * Application Load Balancers, by `target groups`, 預設 multi AZ\(建議選項\)
