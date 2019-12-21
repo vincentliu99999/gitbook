@@ -10,6 +10,9 @@ description: 分配 target 流量
   * Application Load Balancers, by `target groups`, 預設 multi AZ\(建議選項\)
   * Network Load Balancers, by `target groups`
   * Classic Load Balancers, by `instances`
+* [CLB Migration](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/migrate-to-application-load-balancer.html)
+
+## How Elastic Load Balancing Works <a id="how-elastic-load-balancing-works"></a>
 
 ### Request Routing
 
@@ -41,6 +44,8 @@ ALB
 
 1. internal public 有 IP addresses
 2. internet-facing 僅有 private IP addresses，可存取 VPC 的 client 才能使用
+
+## Security in Elastic Load Balancing <a id="security"></a>
 
 ## [Application Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html) <a id="introduction"></a>
 
