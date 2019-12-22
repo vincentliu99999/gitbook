@@ -10,10 +10,6 @@
   * routing 在不同 group 中是獨立的
   * 可設定 routing algorithm\(`Round robin` or `Least outstanding requests`\)
 
-{% hint style="info" %}
-每個 listener 都必須定義一個預設的 rule
-{% endhint %}
-
 ## Load Balancers <a id="application-load-balancers"></a>
 
 * [Load Balancer Attributes](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes)
@@ -78,4 +74,42 @@ client 與 load balancer 溝通時，透過 IPv4 會解析出 A record，IPv6 �
   * forward: 需先建立 target group
   * redirect
 * [Rule Conditions](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#rule-condition-types) type, configuration
+
+## Target Groups <a id="load-balancer-target-groups"></a>
+
+* route request 到註冊的 target。預設會有 health check 可自行 override
+* [attribute](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#target-group-attributes)
+
+### Target Type <a id="target-type"></a>
+
+* instance
+* ip
+* lambda
+
+### Registered Targets <a id="registered-targets"></a>
+
+* target 可存在 1 或多個 target group
+* 需求增加時可註冊額外 target，需求減少或 resource 需要維護時可取消註冊
+* target 註冊 instance Id 時，可利用 [auto scaling group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html)
+
+### Routing Algorithm <a id="modify-routing-algorithm"></a>
+
+* round robin: request, target 相似
+* least outstanding
+
+### Deregistration Delay <a id="deregistration-delay"></a>
+
+* 停止發送 request 到 deregistering target，預設 300 秒等待 in-flight requests 完成
+* 如果沒有 in-flight requests 或 active 連線 deregistration 流程會馬上結束，但 target 的壯代會維持在 draining 直到結束
+
+## Monitor Your Application Load Balancers <a id="load-balancer-monitoring"></a>
+
+* CloudWatch metrics
+* Access logs
+* Request tracing
+* CloudTrail logs
+
+### CloudWatch Metrics
+
+* name space:  `AWS/ApplicationELB` for loadbalancer and target
 
