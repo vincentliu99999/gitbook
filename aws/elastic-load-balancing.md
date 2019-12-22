@@ -65,7 +65,7 @@ ALB
 
 ### Subnets for Your Load Balancer <a id="subnets-load-balancer"></a>
 
-至少兩個 AZ，subnet bitmask 至少 /27，至少有 8 個可自由使用的 IP，load balancer 會使用這些 IP 跟 target 建立連線
+至少兩個 AZ，bitmask 至少 `/27`，至少要有 8 個可自由使用的 IP，load balancer 會使用這些 IP 跟 target 建立連線
 
 ### Load Balancer Security Groups <a id="load-balancer-security-groups"></a>
 
