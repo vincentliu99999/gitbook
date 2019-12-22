@@ -63,15 +63,19 @@ ALB
 
 ## Load Balancers <a id="application-load-balancers"></a>
 
+* [Load Balancer Attributes](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes)
+* 預設 idel timeout 為 60 秒
+* 可搭配 AWS WAF 透過 web ACL allow or block requests
+* HTTPS listener 需有 SSL 憑證
+
 ### Subnets for Your Load Balancer <a id="subnets-load-balancer"></a>
 
 至少兩個 AZ，bitmask 至少 `/27`，至少要有 8 個可自由使用的 IP，load balancer 會使用這些 IP 跟 target 建立連線
 
 ### Load Balancer Security Groups <a id="load-balancer-security-groups"></a>
 
-rule 必須允許 listener 及 health check
-
-[建議的 SG Rules](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-update-security-groups.html#security-group-recommended-rules)
+* rule 必須允許 listener 及 health check 的 port
+* [建議的 SG Rules](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-update-security-groups.html#security-group-recommended-rules)
 
 ### Connection Idle Timeout <a id="connection-idle-timeout"></a>
 
@@ -79,4 +83,25 @@ rule 必須允許 listener 及 health check
   * idle timeout 預設 60 秒
 * back-end connection: load balancer &lt;---&gt; target
   * EC2 建議啟用 HTTP keep-alive
+
+### Load Balancer State <a id="load-balancer-state"></a>
+
+1. provisioning: 設定中
+2. active: 設定完成，可 route traffic
+3. failed: 無法設定
+
+### IP Address Type <a id="ip-address-type"></a>
+
+Internet-facing load balancer 建立或 active 後可設定，internal load balancers 必須使用 IPv4 addresses
+
+1. ipv4: IPv4 only
+2. dualstack: IPv4 or IPv6
+
+client 與 load balancer 溝通時，透過 IPv4 會解析出 A record，IPv6 則是 AAAA record。load balancer 與 target 溝通時，只會透過 IPv4
+
+### Connection Idle Timeout <a id="connection-idle-timeout"></a>
+
+* 在設定的時間內無任何資料傳送至 front-end connection 時會觸發 idle timeout，load balancer 將關閉連線
+* 上傳檔案時，建議在 idle timeout 前至少送 1 byte 已延長 idle timeout
+* 建議 application idle timeout 大於 load balancer idle timeout
 
