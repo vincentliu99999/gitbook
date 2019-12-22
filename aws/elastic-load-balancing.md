@@ -66,7 +66,7 @@ ALB
 * [Load Balancer Attributes](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes)
 * 預設 idel timeout 為 60 秒
 * 可搭配 AWS WAF 透過 web ACL allow or block requests
-* HTTPS listener 需有 SSL 憑證
+* HTTPS listener 需有 SSL 憑證以及 [security policy](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies)
 
 ### Subnets for Your Load Balancer <a id="subnets-load-balancer"></a>
 
