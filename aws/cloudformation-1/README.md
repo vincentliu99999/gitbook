@@ -20,6 +20,7 @@ AWS::EC2::Image::Id 無 drop down list，CloudFormation 僅會驗證 image Id �
 
 * [AWS CloudFormation Limits](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html)
 * [Template Snippets](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/CHAP_TemplateQuickRef.html)
+* \*\*\*\*[**How to create a AWS LB Listener from CloudFormation that returns a fixed response?**](https://stackoverflow.com/questions/53157535/how-to-create-a-aws-lb-listener-from-cloudformation-that-returns-a-fixed-respons)\*\*\*\*
 
 ## Issue
 

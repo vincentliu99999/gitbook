@@ -105,3 +105,24 @@ client 與 load balancer 溝通時，透過 IPv4 會解析出 A record，IPv6 �
 * 上傳檔案時，建議在 idle timeout 前至少送 1 byte 已延長 idle timeout
 * 建議 application idle timeout 大於 load balancer idle timeout
 
+## Listeners for Your Application Load Balancers <a id="load-balancer-listeners"></a>
+
+### Listener Configuration <a id="listener-configuration"></a>
+
+支援 WebSockets, HTTP/2
+
+* **Protocols**: HTTP, HTTPS
+* **Ports**: 1-65535
+
+### Listener Rules <a id="listener-rules"></a>
+
+每個 listener 都有 default rule，rule 由 priority、actions、conditions 組成
+
+* Default Rules 不能有 conditions，沒有符合的 rule 就會執行
+* Rule Priority，由低到高
+* [Rule Actions](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#rule-action-types) type, order, information
+  * fixed-response
+  * forward
+  * redirect
+* [Rule Conditions](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#rule-condition-types) type, configuration
+
