@@ -1,4 +1,68 @@
-# CLI
+# Command
+
+* ls 目前所在路徑的檔案及資料夾
+* pwd 目前的工作目錄
+* echo
+* touch
+* mkdir
+* mv
+
+## cat
+
+1. 顯示
+2. 結合
+3. 新增
+
+```bash
+cat somefile.js
+
+cat file1.txt file2.txt file3.txt > file4.txt
+cat file1.txt file2.txt file3.txt | sort > file4.txt
+
+cat somefile > somenewfile
+cat >> file4.txt
+```
+
+## tail
+
+```bash
+tail somefile
+tail -n 25 somefile
+
+tail /var/log/messages
+```
+
+## find
+
+```bash
+find path -name filename
+find . -name "*.js"
+```
+
+## rm&rmdir
+
+```bash
+rm someFile
+
+rm -rfi some-directory
+
+# some-directory 有資料時，無法移除
+rmdir some-directory
+```
+
+## [grep](http://man7.org/linux/man-pages/man1/grep.1.html)
+
+```bash
+grep "some string" file
+
+# case-insensitive
+grep -i "REact" file
+
+# number of lines
+grep -c "react" index.js
+```
+
+![grep comic](../.gitbook/assets/tu-pian.png)
 
 ## [exa](https://the.exa.website/)
 
@@ -9,28 +73,15 @@ exa -alh
 exa --tree --level=2
 ```
 
-## Getting Super Powers
+## [wget](https://www.gnu.org/software/wget/manual/wget.html)
 
-Becoming a super hero is a fairly straight forward process:
+get files using HTTP, HTTPS, FTP, FTPS
 
-```bash
-ls
-cd
-pwd
+```text
+wget someurl
 ```
 
-{% hint style="info" %}
- Super-powers are granted randomly so please submit an issue if you're not happy with yours.
-{% endhint %}
+## Reference
 
-Once you're strong enough, save the world:
-
-{% code title="hello.sh" %}
-```bash
-# Ain't no code for that yet, sorry
-echo 'You got to trust me on this, I saved the world'
-```
-{% endcode %}
-
-
+* \*\*\*\*[**Here Are 11 Console Commands Every Developer Should Know**](https://medium.com/better-programming/here-are-11-console-commands-every-developer-should-know-54e348ef22fa)\*\*\*\*
 
