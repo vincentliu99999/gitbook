@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Manual](README.md)
-* [Twilio](twilio.md)
+* [Editor&IDE](editor-and-ide.md)
 * [Linux](terminal/README.md)
   * [Command](terminal/cli.md)
   * [CLI&Terminal](terminal/terminal.md)
@@ -23,6 +23,7 @@
   * [ESLint](front-end/eslint.md)
 * [Database](database-1/README.md)
   * [SQL](database-1/sql.md)
+* [Web](web.md)
 * [Git](git/README.md)
   * [Git 設定](git/git-config.md)
   * [Git 新手上路](git/git-basic.md)
