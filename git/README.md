@@ -8,6 +8,7 @@ description: GitHub Cheat Sheet (PDF)
 
 * [GitHub Cheat Sheet \(PDF\)](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf)
 * [Visual Git Cheat Sheet \(SVG \| PNG\)](http://ndpsoftware.com/git-cheatsheet.html)
+* [Git: Cheat Sheet \(advanced\)](https://dev.to/maxpou/git-cheat-sheet-advanced-3a17)
 
 ## CLI Tools
 

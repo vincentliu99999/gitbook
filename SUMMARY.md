@@ -7,6 +7,7 @@
   * [CLI&Terminal](terminal/terminal.md)
   * [Shell](terminal/shell.md)
 * [Back-end](backend/README.md)
+  * [Python](backend/python.md)
   * [Node.js](backend/node.js/README.md)
     * [PM2 - Process Manager](backend/node.js/pm2-process-manager.md)
   * [Java](backend/java/README.md)

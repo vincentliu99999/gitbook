@@ -27,6 +27,7 @@ cat >> file4.txt
 
 ```bash
 tail somefile
+tail -f somefile
 tail -n 25 somefile
 
 tail /var/log/messages
